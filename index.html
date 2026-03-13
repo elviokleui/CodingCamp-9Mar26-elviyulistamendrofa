@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle">
+            <button id="themeToggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+
+        <!-- Greeting Section -->
+        <section class="card greeting-card">
+            <div class="time-display" id="timeDisplay">00:00:00</div>
+            <div class="date-display" id="dateDisplay">Monday, January 1, 2024</div>
+            <h1 class="greeting" id="greeting">Good Morning</h1>
+            <div class="name-input-group">
+                <input 
+                    type="text" 
+                    id="nameInput" 
+                    placeholder="Enter your name" 
+                    maxlength="30"
+                >
+                <button id="saveName">Save</button>
+            </div>
+        </section>
+
+        <!-- Focus Timer Section -->
+        <section class="card timer-card">
+            <h2>Focus Timer</h2>
+            <div class="timer-duration-group">
+                <label for="timerDuration">Duration:</label>
+                <select id="timerDuration">
+                    <option value="15">15 minutes</option>
+                    <option value="25" selected>25 minutes</option>
+                    <option value="50">50 minutes</option>
+                    <option value="custom">Custom</option>
+                </select>
+                <input 
+                    type="number" 
+                    id="customDuration" 
+                    placeholder="Minutes" 
+                    min="1" 
+                    max="999"
+                    style="display: none;"
+                >
+            </div>
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <div class="timer-controls">
+                <button id="startTimer" class="btn-primary">Start</button>
+                <button id="stopTimer" class="btn-secondary">Stop</button>
+                <button id="resetTimer" class="btn-secondary">Reset</button>
+            </div>
+        </section>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section class="card todo-card">
+            <h2>To-Do List</h2>
+            <div class="todo-input-group">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    placeholder="Add a new task" 
+                    maxlength="100"
+                >
+                <button id="addTodo" class="btn-primary">Add</button>
+                <button id="sortTodos" class="btn-secondary">Sort Tasks</button>
+            </div>
+            <ul id="todoList" class="todo-list"></ul>
+        </section>
+
+        <!-- Quick Links Section -->
+        <section class="card links-card">
+            <h2>Quick Links</h2>
+            <div class="link-input-group">
+                <input 
+                    type="text" 
+                    id="linkName" 
+                    placeholder="Website name" 
+                    maxlength="30"
+                >
+                <input 
+                    type="url" 
+                    id="linkUrl" 
+                    placeholder="https://example.com"
+                >
+                <button id="addLink" class="btn-primary">Add</button>
+            </div>
+            <div id="linksList" class="links-list"></div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
